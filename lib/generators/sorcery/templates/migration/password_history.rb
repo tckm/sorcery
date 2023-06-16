@@ -1,4 +1,4 @@
-class PasswordHistory < <%= migration_class_name %>
+class SorceryPasswordHistory < <%= migration_class_name %>
   def change
     create_table :password_history do |t|
       t.integer :user_id,          null: false
