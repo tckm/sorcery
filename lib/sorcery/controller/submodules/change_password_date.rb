@@ -25,8 +25,8 @@ module Sorcery
                 end
 
                 res = {
-                    is_old_password_match: is_old_password_match
-                    is_new_password_match: is_new_password_match
+                    is_old_password_match: is_old_password_match,
+                    is_new_password_match: is_new_password_match,
                     update_result:         update_result
                 }
 
