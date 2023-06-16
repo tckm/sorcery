@@ -19,6 +19,7 @@ module Sorcery
       require 'sorcery/model/submodules/brute_force_protection'
       require 'sorcery/model/submodules/external'
       require 'sorcery/model/submodules/magic_login'
+      require 'sorcery/model/submodules/change_password_date'
     end
   end
 
