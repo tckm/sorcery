@@ -20,6 +20,7 @@ module Sorcery
       require 'sorcery/model/submodules/external'
       require 'sorcery/model/submodules/magic_login'
       require 'sorcery/model/submodules/change_password_date'
+      require 'sorcery/model/submodules/password_history'
     end
   end
 
@@ -35,6 +36,7 @@ module Sorcery
       require 'sorcery/controller/submodules/activity_logging'
       require 'sorcery/controller/submodules/external'
       require 'sorcery/controller/submodules/change_password_date'
+      require 'sorcery/controller/submodules/password_history'
     end
   end
 
