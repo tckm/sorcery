@@ -4,6 +4,7 @@ module Sorcery
 
         module ChangePasswordDate
           def self.included(base)
+            p ['---------------- ChangePasswordDate.base', base]
             base.send(:include, InstanceMethods)
           end
   
