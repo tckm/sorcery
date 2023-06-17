@@ -36,20 +36,19 @@ module Sorcery
             end
 
             def clear_old_history
-              last_n_history = self.password_history.order("id ASC")
-                                                    .limit(5)
-                                                    .select("MIN(id) AS min_id")
-              
-              min_id = last_n_history[0].min_id
+              last_n = 5
 
-              delete_res = self.password_history.where("id <= ?", min_id)
-                                                .delete_all
-
-              p ['############## select sql', last_n_history.to_sql]
-              p ['############## delete sql', delete_res.to_sql]
+              if self.password_history.size > last_n
+                last_n_history = self.password_history.order("id DESC")
+                                                      .limit(last_n)
               
+                min_id = last_n_history.select("MIN(id) AS min_id")[0]
+                                       .min_id
+
+                delete_res = self.password_history.where("id <= ?", min_id)
+                                                  .delete_all
+              end  
             end
-
           end
         end
       end
