@@ -27,7 +27,7 @@ module Sorcery
               self.password_history.each do |item|
                 check = self.sorcery_config.encryption_provider.matches?(item.crypted_password, password, item.salt)
                     
-                return check if chec
+                return check if check
               end
 
               return res
